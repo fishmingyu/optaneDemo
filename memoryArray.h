@@ -1,6 +1,6 @@
 #include <memkind.h>
 
-template<class T, MemoryType type>
+template<class T>
 class Array
 {
 public:
@@ -8,7 +8,7 @@ public:
     {
         size = num * sizeof(T);
         kind = m.poolPtr();
-        if(type == DRAM)
+        if(m.mtype == DRAM)
             array = (T*) memkind_malloc(MEMKIND_DEFAULT, size);
         else
         {

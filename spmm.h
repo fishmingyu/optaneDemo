@@ -1,3 +1,6 @@
+#ifndef SPMM_H
+#define SPMM_H
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/time.h>
@@ -48,3 +51,5 @@ void COO_to_CSR(std::vector<int>& row_CSR, std::vector<int> row_COO,
         row_CSR.push_back(static_cast<int>(Size));
     }
 }
+
+#endif //SPMM_H
