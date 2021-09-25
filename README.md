@@ -1,4 +1,4 @@
-##OptaneDemo
+## OptaneDemo
 
 A simple high-level wrapper of memkind library.
 
