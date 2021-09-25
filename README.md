@@ -47,6 +47,8 @@ MemoryPool(std::string path, MemoryType mt, int poolSize);
 ```
 
 The above API could help you construct pmem memory pool easily by assigning DAX file path, memory type and size of memory pool. 
+When poolSize is set to zero, allocations are satisfied as long as the temporary file can grow. 
+The maximum heap size growth is limited by the capacity of the file system mounted under the path argument.
 
 ```C++
 Array<int> csrptr(nrow, memorypool);
