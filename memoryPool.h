@@ -1,3 +1,6 @@
+#ifndef MEMEORYPOOL_H
+#define MEMEORYPOOL_H 
+
 #include <memkind.h>
 #include <string>
 #include "optaneUtil.h"
@@ -38,3 +41,5 @@ MemoryPool::~MemoryPool()
 		memkind_fatal(err);
 	}
 }
+
+#endif  //MEMEORYPOOL_H

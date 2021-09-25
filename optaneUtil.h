@@ -1,3 +1,6 @@
+#ifndef OPTANEUTIL_H
+#define OPTANEUTIL_H 
+
 #include <memkind.h>
 
 enum MemoryType
@@ -14,3 +17,4 @@ void memkind_fatal(int err)
 	fprintf(stderr, "%s\n", error_message);
 	exit(1);
 }
+#endif //OPTANEUTIL_H

@@ -1,0 +1,1 @@
+g++-10 -std=c++11 -o optaneSpmm optaneSpmm.cpp -lmemkind

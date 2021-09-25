@@ -13,7 +13,6 @@ public:
         else
         {
             array = (T*) memkind_malloc(kind, size);
-            printf("pmem!\n");
         }
     }
     ~Array()

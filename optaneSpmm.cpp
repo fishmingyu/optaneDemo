@@ -54,12 +54,12 @@ int main(int argc, char** argv)
     Array<float> dense(nrow * kdim, myOptane);
     Array<float> out(nrow * kdim, myOptane);
 
+    srand(0);
+    uint64_t start = now();
     std::copy(row_CSR.begin(), row_CSR.end(), csrptr.array);
     std::copy(col_COO.begin(), col_COO.end(), colind.array);
     std::copy(values_COO.begin(), values_COO.end(), values.array);
     
-    srand(0);
-    uint64_t start = now();
     for(int i = 0;i< nrow * kdim;i++)
     {
         out.array[i] = ((rand() % INT_MAX) / INT_MAX * 1.0);
