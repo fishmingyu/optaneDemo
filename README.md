@@ -36,7 +36,7 @@ To create a DAX enabled filesystem, you could follow these steps bellow
 ```bash
 sudo mkfs.ext4 /dev/pmem0 (or /dev/pmem1)
 sudo mkdir /pmem1
-sudo mount -o dax /dev/pmem0 /pmem9
+sudo mount -o dax /dev/pmem0 /pmem0
 sudo mount -v | grep /pmem0
 ```
 
@@ -80,3 +80,14 @@ Our results are showed below(as-caida.mtx, Intel(R) Xeon(R) Platinum 8276L CPU @
 | ---------- | ---- | ------ |
 | Time(us)   | 2718 | 6589   |
 
+#### Switching to Memory Mode
+
+``` shell
+ndctl list -N #check namespace
+ndctl disable-namespace ...
+ndctl destory-namespace ...
+```
+
+| Memorytype | DRAM(only) | OPTANE(as cache) |
+| ---------- | ---- | ------ |
+| Time(us)   | 2674 | 3295   |
