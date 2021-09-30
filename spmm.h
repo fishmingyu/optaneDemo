@@ -17,9 +17,9 @@ void spmm(int nrow, int kdim, int *csrptr, int *colind, float *values, float* de
 {
     for(int i = 0;i < nrow;++i)
     {
-        for(int k = 0;k < kdim;k++)
+        for(int j = csrptr[i];j < csrptr[i];++j)
         {
-            for(int j = csrptr[i];j < csrptr[i];++j)
+            for(int k = 0;k < kdim;k++)
             {
                 float val = values[j];
                 int col = colind[j];

@@ -55,7 +55,7 @@ int main(int argc, char** argv)
     Array<float> out(nrow * kdim, myOptane);
 
     srand(0);
-    uint64_t start = now();
+    
     std::copy(row_CSR.begin(), row_CSR.end(), csrptr.array);
     std::copy(col_COO.begin(), col_COO.end(), colind.array);
     std::copy(values_COO.begin(), values_COO.end(), values.array);
@@ -65,6 +65,7 @@ int main(int argc, char** argv)
         out.array[i] = ((rand() % INT_MAX) / INT_MAX * 1.0);
         dense.array[i] = ((rand() % INT_MAX) / INT_MAX * 1.0);
     }
+    uint64_t start = now();
     spmm(nrow, kdim, csrptr.array, colind.array, values.array, dense.array, out.array);
     uint64_t end = now();
     printf("finished time %ld us\n", end - start);
